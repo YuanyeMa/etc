@@ -54,5 +54,21 @@ endif
 "add for linux-3.0 ctas
 set tags+=/home/kevin/dep/ldd3/linux-3.0/tags
 set nu
+
+"高亮显示搜索结果
 set hlsearch
+
+"当前行高亮
+set cursorline
+"设置当前行高亮颜色
+hi CursorLine cterm=NONE ctermbg=gray ctermfg=NONE guibg=NONE guifg=NONE
+"设置当前列高亮
+"set cursorcolumn
+"设置列高亮颜色
+"hi Cursorcolumn  cterm=NONE ctermbg=gray ctermfg=NONE guibg=NONE guifg=NONE
+
+"设置显示不可见字符
+"set list 
+"设置不可见字符 tab显示为--
+"set listchars=tab:--
 
