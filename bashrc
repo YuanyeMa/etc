@@ -107,8 +107,8 @@ export PKG_CONFIG_PATH
 
 alias vi='vim'
 
-source /root/Desktop/git-completion.bash
-source /root/Desktop/git-prompt.sh
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
 
 #export GIT_PS1_SHOWDIRTYSTATE=1
 #export PS1='\w$(__git_ps1 " (%s)")\$'
