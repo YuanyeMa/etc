@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/root/self/wpa_supplicant-0.7.3/wpa_supplicant/examples'
-let g:netrw_dirhist_2='/root/self/wpa_supplicant-0.7.3/wpa_supplicant/doc'
-let g:netrw_dirhist_3='/root/self/wpa_supplicant-0.7.3/wpa_supplicant/doc/docbook'
-let g:netrw_dirhist_4='/root/workspace/JXJ-hisi/app/main/misc'
-let g:netrw_dirhist_5='/root/hisi/nvc-hi3518-driver/d01ip/drv/irc/test'
