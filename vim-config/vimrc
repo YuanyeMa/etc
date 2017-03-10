@@ -66,10 +66,27 @@ hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
 "设置当前列高亮
 "set cursorcolumn
 "设置列高亮颜色
-"hi Cursorcolumn  cterm=NONE ctermbg=gray ctermfg=NONE guibg=NONE guifg=NONE
+"hi Cursorcolumn  cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
 
 "设置显示不可见字符
 "set list 
 "设置不可见字符 tab显示为--
 "set listchars=tab:--
+
+"设置递进搜索
+set incsearch
+
+"设置忽略搜索大小写
+set ignorecase
+
+"设置智能大小写搜索,只有搜索时输入的有大写字母，才会自动区分大小写搜索
+set smartcase
+
+"设置自动缩进
+set autoindent
+"设置C语言自动缩进
+set cindent 
+
+"设置tab缩进量
+set shiftwidth=8
 

@@ -9,4 +9,4 @@ updates:
 	data: 12/12/2016	--- upload OmegaOptions.bak for chrome`s plugin SwitchyOmega  
 	data: 12/25/2016	--- 添加awesome.lua作为自定义的awesome的部分配置选项  
 	data: 01/10/2017	--- 整理目录,并写了几个自动配置脚本  
-
+	data: 03/10/2017	--- 更新了vimrc的几个新的配置  
