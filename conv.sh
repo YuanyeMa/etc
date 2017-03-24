@@ -6,6 +6,7 @@ judge(){
     		echo "$P conv success"
 	else 
 		echo "[0;31m $P conv failed [0m"
+		rm -f $P.tmp
 	fi
 }
 
@@ -16,7 +17,7 @@ usage(){
 }
 
 
-if [  $# != 2 ] || [  -z $1 ] ; then 
+if [  $# != 1 ] || [  -z $1 ] ; then 
 	usage
 	exit
 fi
@@ -43,7 +44,6 @@ fi
 echo "cp $DIR to $TAR"
 cp -rp $DIR $TAR
 
-exit
 
 for INDEX in "*.c" "*.h" "*.sh" "makefile"
 do
@@ -55,8 +55,8 @@ do
 		fi
 
 		#是GBK就转换为utf-8 format
-		if [ -n "$(file $P | grep "ISO")" ] ; then 
-			iconv -f GBK -t UTF-8 $P -o $P
+		if [ -n "$(file $P | grep "ISO-")" ] ; then 
+			iconv -f GBK -t UTF-8 $P -o $P.tmp && mv $P.tmp $P
 			judge
 		fi
 	done

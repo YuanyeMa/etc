@@ -10,3 +10,4 @@ updates:
 	data: 12/25/2016	--- 添加awesome.lua作为自定义的awesome的部分配置选项  
 	data: 01/10/2017	--- 整理目录,并写了几个自动配置脚本  
 	data: 03/10/2017	--- 更新了vimrc的几个新的配置  
+	data: 03/24/2017	--- 添加了conv.sh，此脚本用与将windows编写的GBK源代码工程转换为Linux下的UTF-8工程  
