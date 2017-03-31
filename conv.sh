@@ -56,7 +56,7 @@ do
 
 		#是GBK就转换为utf-8 format
 		if [ -n "$(file $P | grep "ISO-")" ] ; then 
-			iconv -f GBK -t UTF-8 $P -o $P.tmp && mv $P.tmp $P
+			iconv -c -f GBK -t UTF-8 $P -o $P.tmp && mv $P.tmp $P
 			judge
 		fi
 	done

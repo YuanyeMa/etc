@@ -11,4 +11,5 @@ updates:
 	data: 01/10/2017	--- 整理目录,并写了几个自动配置脚本  
 	data: 03/10/2017	--- 更新了vimrc的几个新的配置  
 	data: 03/24/2017	--- 添加了conv.sh，此脚本用与将windows编写的GBK源代码工程转换为Linux下的UTF-8工程  
-	data: 03/29/2017	--- 添加cscope相关信息，并上传vim user manual的pdf文档以及其详细解释reference
+	data: 03/29/2017	--- 添加cscope相关信息，并上传vim user manual的pdf文档以及其详细解释reference  
+	data: 03/31/2017	--- 为conv.sh脚本的iconv命令增加-c参数，遇到无法解析的符号就跳过  
