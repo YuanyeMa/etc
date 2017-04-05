@@ -13,4 +13,4 @@ updates:
 	data: 03/24/2017	--- 添加了conv.sh，此脚本用与将windows编写的GBK源代码工程转换为Linux下的UTF-8工程  
 	data: 03/29/2017	--- 添加cscope相关信息，并上传vim user manual的pdf文档以及其详细解释reference  
 	data: 03/31/2017	--- 为conv.sh脚本的iconv命令增加-c参数，遇到无法解析的符号就跳过  
-	date: 04/05/2017	--- 创建other目录用于存储一些杂项（其他小功能脚本）  
+	date: 04/05/2017	--- 创建other目录用于存储一些杂项（其他小功能脚本）,添加configure.sh用于ubuntu自动配置    

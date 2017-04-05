@@ -4,5 +4,5 @@
 cp ./git-completion.bash ~/.git-completion.bash
 cp ./git-prompt.sh ~/.git-prompt.sh
 
-tail -n 8 ./bashrc >> ~/.bashrc
+cat ./bashrc >> ~/.bashrc
 source ~/.bashrc
