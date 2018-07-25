@@ -17,4 +17,5 @@ fi
 ./vim-config/vim_config.sh
 
 
+ timedatectl set-local-rtc true 
 
