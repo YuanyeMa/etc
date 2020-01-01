@@ -7,7 +7,6 @@
 *  设置了tab的缩进为kernel style的8个空格  
 *  设置了自动缩进  
 
-vimrc~ 主要是使用vim插件时的配置，主要定义了NERDTree的快捷键为F2  
 
 此外：
 	可以在http://vimcdoc.sourceforge.net 下载安装vim user_manual

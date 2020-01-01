@@ -1,14 +1,22 @@
-"add for linux-3.0 ctas
-"set tags+=/home/kevin/dep/ldd3/linux-3.0/tags
 set nu
+syntax on
 
 "高亮显示搜索结果
 set hlsearch
+"输入时搜索
+set incsearch
+"设置递进搜索
+set incsearch
+"设置忽略搜索大小写
+set ignorecase
+"设置智能大小写搜索,只有搜索时输入的有大写字母，才会自动区分大小写搜索
+set smartcase
+
 
 "当前行高亮
 set cursorline
 "设置当前行高亮颜色
-hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
+hi CursorLine cterm=NONE ctermbg=black ctermfg=grey guibg=NONE guifg=NONE
 "设置当前列高亮
 "set cursorcolumn
 "设置列高亮颜色
@@ -18,42 +26,39 @@ hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
 "set list 
 "设置不可见字符 tab显示为--
 "set listchars=tab:--
-
-"设置递进搜索
-set incsearch
-
-"设置忽略搜索大小写
-set ignorecase
-
-"设置智能大小写搜索,只有搜索时输入的有大写字母，才会自动区分大小写搜索
-set smartcase
-
-"设置自动缩进
+"按下回车键后，下一行的缩进会自动跟上一行的缩进保持一致
 set autoindent
-"设置C语言自动缩进
-set cindent 
 
-"设置tab缩进量
-set shiftwidth=8
+set wildmenu "命令补全
+
+map s :w<CR>
+map q :q<CR>
+map Q :q!<CR>
+map R :PlugInstall<CR>
+
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py'}
+call plug#end()
+
+" NerdTree
+map <F2> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" NERDTree-git
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
 
-if has("cscope")
-	set csprg=/usr/bin/cscope	" cscope 命令的位置
-	set csto=0			" 设置cstag命令查找的次序 ： 0 先找cscope数据库再找标签文件，1 先找标签文件再找cscope数据库
-	set cst				" 同时搜索cscope数据库和标签文件
-	set cscopequickfix=g-,s-,c-,d-,i-,t-,e-	" 使用quickfix窗口来显示cscope查找结果(-表示清楚上一次的结果，+表示结果必须被添加到quickfix窗口，0表示不显示到quickfix窗口)
-	set nocsverb 			" 先关闭，然后add cscope数据库之后再打开，vim会提示是否加载失败
-	if filereadable("cscope.out")
-		cs add cscope.out
-	elseif $CSCOPE_DB!=""
-		cs add $CSCOPE_DB
-	endif
-	set csverb 
-endif 
 
-
-
-
-"for python
-set ts=4
-set noexpandtab
