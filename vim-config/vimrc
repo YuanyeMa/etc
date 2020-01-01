@@ -1,6 +1,8 @@
 set nu
 syntax on
 
+set nocompatible
+
 "高亮显示搜索结果
 set hlsearch
 "输入时搜索
@@ -12,6 +14,13 @@ set ignorecase
 "设置智能大小写搜索,只有搜索时输入的有大写字母，才会自动区分大小写搜索
 set smartcase
 
+set splitbelow
+set splitright
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
 
 "当前行高亮
 set cursorline
@@ -27,9 +36,24 @@ hi CursorLine cterm=NONE ctermbg=black ctermfg=grey guibg=NONE guifg=NONE
 "设置不可见字符 tab显示为--
 "set listchars=tab:--
 "按下回车键后，下一行的缩进会自动跟上一行的缩进保持一致
-set autoindent
 
 set wildmenu "命令补全
+" 代码折叠 按za键折叠或取消折叠
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+
+" python 支持PEP8风格的缩进
+au BufNewFile,BufRead *.py
+	\ set tabstop=4 |
+	\ set softtabstop=4 |
+	\ set shiftwidth=4 |
+	\ set textwidth=79 |
+	\ set expandtab |
+	\ set autoindent |
+	\ set fileformat=unix 
+
+set encoding=utf-8
 
 map s :w<CR>
 map q :q<CR>
@@ -41,6 +65,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py'}
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'scrooloose/syntastic'
+Plug 'nvie/vim-flake8'
 call plug#end()
 
 " NerdTree
@@ -60,5 +88,13 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" SimpylFold
+let g:SimpylFold_docstring_preview=1
+
+" python 代码高亮
+let python_highlight_all=1
 
